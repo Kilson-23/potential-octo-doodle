@@ -1,7 +1,6 @@
-export interface Request extends Express.Request {
-    // Adicione propriedades personalizadas aqui, se necessário
-}
+export default function setRoutes(app) {
+    const IndexController = require('../controllers/index').default;
+    const indexController = new IndexController();
 
-export interface Response extends Express.Response {
-    // Adicione propriedades personalizadas aqui, se necessário
+    app.get('/', indexController.getIndex.bind(indexController));
 }
