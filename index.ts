@@ -1,6 +1,7 @@
-export default function setRoutes(app) {
-    const IndexController = require('../controllers/index').default;
-    const indexController = new IndexController();
-
-    app.get('/', indexController.getIndex.bind(indexController));
+class IndexController {
+    getIndex(req, res) {
+        res.send('Bem-vindo ao Kaybet.ao!');
+    }
 }
+
+export default IndexController;
